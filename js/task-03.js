@@ -15,27 +15,8 @@ const images = [
 
 const galleryContainer = document.querySelector('.gallery')
 
-const makeGalleryFn = options => {
-  return options.map(option => {
-      const itemEl = document.createElement('li');
-      itemEl.classList.add('list__item');
-      
-      const imgEl = document.createElement('img');
-      imgEl.classList.add('img__item');
-      imgEl.src = option.url;
-      imgEl.alt = option.alt;
-    
-      itemEl.appendChild(imgEl)
-        return itemEl;
-    }
-    )
-};
-const listEl = makeGalleryFn(images)
+const markup = images.map(({ url, alt }) =>
+  `<li class='list__item'><img class='img__item' 
+src='${url} alt='${alt}''></li>`).join("");
 
-galleryContainer.append(...listEl)
-
-// не внимательно прочитал задание и сделал стили в js, потом сделал стили через классы в CSS
-
-// galleryContainer.style.display = 'flex';
-// galleryContainer.style.justifyContent = 'space-between';
-// galleryContainer.style.padding = 0;
+galleryContainer.insertAdjacentHTML("beforeend", markup);

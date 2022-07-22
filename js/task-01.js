@@ -1,12 +1,10 @@
 const amountCategories = document.querySelector('#categories');
 console.log(`'Number of categories:' ${amountCategories.children.length}`);
 
-const titleCategories = document.querySelectorAll('h2')
+const titleCategories = document.querySelectorAll('.item')
 
-const listCategories = amountCategories.children
-
-for (let i = 0; i < listCategories.length; i += 1){
+titleCategories.forEach(item => {
     console.log('')
-    console.log(`Category: ${titleCategories[i].textContent}`)
-    console.log(`Elements: ${listCategories[i].lastElementChild.children.length}`)
-}
+    console.log(`Category: ${item.firstElementChild.textContent}`)
+    console.log(`Elements: ${item.lastElementChild.children.length}`)
+})

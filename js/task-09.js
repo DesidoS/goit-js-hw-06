@@ -9,5 +9,5 @@ const spanEl = document.querySelector('.color')
 
 btnChangeColorEl.addEventListener('click', () => {
   divEl.style.backgroundColor = getRandomHexColor()
-  spanEl.textContent = `- ${divEl.style.backgroundColor}`
+  spanEl.textContent = divEl.style.backgroundColor
 });
