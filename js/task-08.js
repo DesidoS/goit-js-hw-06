@@ -1,4 +1,5 @@
 const formEl = document.querySelector(".login-form");
+console.log("formEl", formEl)
 
 formEl.addEventListener('submit', handleSubmit);
 
